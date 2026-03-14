@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #080010;
+  --foreground: #f8f0ff;
+  --border: rgba(230, 190, 255, 0.2);
+  --muted: #130d20;
+
+  /* Brand color palette */
+  --pink: #ffb6c1;
+  --pink-deep: #e891a0;
+  --lavender: #c8b4e8;
+  --lavender-light: #e6d9f7;
+  --blue: #7eb8d4;
+  --blue-deep: #4a90b8;
+
+  /* Glassmorphism variables */
+  --glass-bg: rgba(255, 200, 235, 0.04);
+  --glass-border: rgba(220, 180, 255, 0.18);
+  --glass-hover-bg: rgba(255, 200, 235, 0.10);
+  --glass-hover-border: rgba(200, 180, 255, 0.40);
+  --glass-blur: 20px;
+}
+
+* {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* ──── Base ──────────────────────────────────────── */
+html {
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ──── Background ambient glow ──────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background:
+    radial-gradient(ellipse 90% 60% at 20% 10%, rgba(200, 130, 220, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 55% at 80% 5%, rgba(100, 160, 220, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255, 150, 180, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 10% 80%, rgba(120, 80, 200, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(90, 160, 210, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+/* subtle mid-page accent */
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120vw;
+  height: 120vw;
+  background: radial-gradient(ellipse, rgba(180, 120, 255, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+/* ──── Glassmorphism utilities ───────────────────── */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-panel:hover {
+  background: var(--glass-hover-bg);
+  border-color: var(--glass-hover-border);
+  box-shadow: 0 8px 40px rgba(180, 120, 255, 0.18), 0 0 0 1px rgba(200, 180, 255, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  transform: translateY(-2px);
+}
+
+/* card with stronger glass */
+.glass-card {
+  background: rgba(255, 220, 240, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(220, 170, 255, 0.20);
+  border-radius: 20px;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(200, 160, 255, 0.45);
+  box-shadow: 0 16px 64px rgba(160, 80, 220, 0.25), 0 0 0 1px rgba(200, 180, 255, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Navbar glass */
+.glass-nav {
+  background: rgba(15, 5, 30, 0.60);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-bottom: 1px solid rgba(200, 160, 255, 0.14);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Glow button */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--pink), var(--lavender), var(--blue));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-glow:hover::before {
+  opacity: 1;
+}
+
+.btn-glow:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 24px rgba(200, 140, 255, 0.4);
+}
+
+.btn-glow:active {
+  transform: scale(0.98);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--lavender) 50%, var(--blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ──── Typography ────────────────────────────────── */
+.iceberg-regular {
+  font-family: "Iceberg", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Iceberg", sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/* ──── Hover link effect ─────────────────────────── */
+a:not([class]) {
+  transition: color 0.2s ease;
+}
+
+a:not([class]):hover {
+  color: var(--lavender);
+}
+
+/* ──── Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--pink-deep), var(--lavender), var(--blue-deep));
+  border-radius: 4px;
+}

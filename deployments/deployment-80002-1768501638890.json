@@ -1,0 +1,11 @@
+{
+  "network": "amoy",
+  "timestamp": "2026-01-15T18:27:18.889Z",
+  "contracts": {
+    "TrustScoreManager": "0x3ef1456a5AbA04eFd979be0a49232211C88Df014",
+    "BNPLCore": "0x0B8e9E0278Fe46647E9C4876586Ece93e8Ec1F65",
+    "USDC": "0x8B0180f2101c8260d49339abfEe87927412494B4"
+  },
+  "admin": "0x74E36d4A7b33057e3928CE4bf4C8C53A93361C34",
+  "merchant": "0xF92e0D914c6Bbd5a1B51eB2C023a2c3977b7f4C4"
+}

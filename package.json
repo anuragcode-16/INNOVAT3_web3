@@ -1,0 +1,44 @@
+{
+  "name": "onstream-bnpl",
+  "version": "1.0.0",
+  "description": "OnStream - Decentralized Buy Now, Pay Later Protocol",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts --network amoy",
+    "verify": "hardhat verify --network amoy"
+  },
+  "keywords": [
+    "web3",
+    "bnpl",
+    "defi",
+    "polygon",
+    "usdc"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@typechain/hardhat": "^9.0.0",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.6",
+    "chai": "^4.3.10",
+    "circom": "^0.5.46",
+    "hardhat": "^2.19.4",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "circomlib": "^2.0.5",
+    "dotenv": "^16.3.1",
+    "snarkjs": "^0.7.6"
+  }
+}
