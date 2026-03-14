@@ -355,7 +355,7 @@ Contributions welcome! Please:
 ## 📞 Support & Links
 
 - **GitHub**: [github.com/anuragcode-16/INNOVAT3_web3](https://github.com/anuragcode-16/INNOVAT3_web3)
-- **Live Demo**: [onstream.vercel.app](https://onstream.vercel.app)
+- **Live Demo**: [onstream.vercel.app](https://onsteam.vercel.app/)
 - **Polygon Amoy Explorer**: [amoy.polygonscan.com](https://amoy.polygonscan.com)
 
 ---
