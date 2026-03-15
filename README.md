@@ -25,7 +25,7 @@ onstream is a decentralized Buy Now, Pay Later (BNPL) protocol that enables user
 
 - **Repayment Score**: 0-100+ points (earned through loan repayments)
   - On-time payment: +10 points
-  - Early payment (7+ days before due): +15 points
+  - Early payment (3+ days before due): +15 points
   
 - **Wallet History Bonus**: 0-60 points (auto-calculated on-chain)
   - Wallet age: up to 20 points
@@ -79,11 +79,6 @@ onstream/
 │   ├── components/        # React components
 │   ├── hooks/             # Custom React hooks
 │   └── lib/               # Utilities & constants
-├── docs/                   # Comprehensive documentation
-│   ├── IMPLEMENTATION_GUIDE.md
-│   ├── USER_WORKFLOW.md
-│   ├── PRIVACY_ARCHITECTURE.md
-│   └── DEMO_SCRIPT.md
 └── README.md
 ```
 
@@ -204,16 +199,9 @@ Users can prove they hold sufficient USDC without revealing exact amounts:
 ### 4. Flexible Repayment
 - **Full Repayment**: Pay entire loan at once
 - **Installment Payments**: Make partial payments (min 1/3 of remaining)
-- **Early Payment Bonus**: Repay 7+ days early for +15 points instead of +10
+- **Early Payment Bonus**: Repay 3+ days early for +15 points instead of +10
 
-## 📚 Documentation
 
-- **[PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md)** - Complete technical documentation (500+ lines)
-- **[IMPLEMENTATION_GUIDE.md](./docs/IMPLEMENTATION_GUIDE.md)** - Step-by-step build guide
-- **[USER_WORKFLOW.md](./docs/USER_WORKFLOW.md)** - Detailed user and admin workflows
-- **[PRIVACY_ARCHITECTURE.md](./docs/PRIVACY_ARCHITECTURE.md)** - ZK proof system explained
-- **[DEMO_SCRIPT.md](./docs/DEMO_SCRIPT.md)** - Hackathon demo walkthrough
-- **[CREDIT_SYSTEM_VISUAL_GUIDE.md](./CREDIT_SYSTEM_VISUAL_GUIDE.md)** - Visual credit scoring guide
 
 ## 🔐 Security
 
@@ -238,8 +226,6 @@ npm test
 Test specific modules:
 ```bash
 npx hardhat test test/BNPL.test.ts
-npx hardhat test test/TrustScore.test.ts
-npx hardhat test test/WalletAnalyzer.test.ts
 ```
 
 Check test coverage:
@@ -314,7 +300,6 @@ npx hardhat run scripts/setup-liquidity.ts --network amoy
 ### Technical Achievements
 
 - ✅ 4 interconnected smart contracts deployed and verified
-- ✅ 500+ lines of comprehensive documentation
 - ✅ Real USDC transactions on Polygon testnet
 - ✅ Dynamic credit scoring with 3 independent data sources
 - ✅ Privacy-preserving ZK proof system
@@ -322,26 +307,9 @@ npx hardhat run scripts/setup-liquidity.ts --network amoy
 - ✅ Real-time blockchain data synchronization
 - ✅ Responsive mobile-first UI
 
-## 👥 Team
-
-**Hackathon Team**
-- Smart Contract Development (Solidity)
-- Frontend Development (Next.js/React)
-- Web3 Integration (wagmi/viem)
-- System Architecture & Design
-
 ## 📄 License
 
 MIT License - see [LICENSE](./LICENSE) file for details
-
-## 🤝 Contributing
-
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 🙏 Acknowledgments
 
@@ -359,9 +327,3 @@ Contributions welcome! Please:
 - **Polygon Amoy Explorer**: [amoy.polygonscan.com](https://amoy.polygonscan.com)
 
 ---
-
-**Built with ❤️ for Web3 Hackathon 2026**
-
-*onstream - Building the FICO Score of Web3*
-
-*"Start with trust, grow with reputation"*
